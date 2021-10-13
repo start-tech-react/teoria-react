@@ -2,13 +2,10 @@ import './ListaPessoas.css';
 import PessoaInfo from './PessoaInfo';
 
 function ListaPessoas(props) {
+  console.log(props);
   return (
     <div className="ListaPessoas">
-      <h1>Listagem de pessoas</h1>
-      {
-        props.pessoas.map(pessoa => <PessoaInfo nome={pessoa.nome} key={pessoa.id} />)
-      }
-      <header>Teste</header>
+      {props.pessoas.map(pessoa => <PessoaInfo pessoa={pessoa} key={pessoa.div} />)}
     </div>
   );
 }

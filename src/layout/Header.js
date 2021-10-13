@@ -1,10 +1,10 @@
-import logo from '../assets/logo.svg';
+import logo from '../assets/ambev-tech-logo.svg';
 import './Header.css';
 
-function Header() {
+function Header(props) {
     return (
         <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
+            <img src={logo} alt={props.info.altText} />
         </header>
     );
 }

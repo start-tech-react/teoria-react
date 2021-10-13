@@ -10,7 +10,7 @@ class PessoaInfo extends React.Component {
           <div className="card-body">
             <h5 className="card-title">{this.props.pessoa.nome}</h5>
             <p className="card-text">{this.props.pessoa.perfil}</p>
-            <a href="#" className="btn btn-primary">Go somewhere</a>
+            <a href={this.props.link} className="btn btn-primary">Go somewhere</a>
           </div>
         </div>
       </div>

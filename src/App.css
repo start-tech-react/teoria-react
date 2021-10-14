@@ -1,3 +1,13 @@
 .App {
   text-align: center;
 }
+
+.App-nightmode {
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+.App-nightmode .card {
+  border: 1px solid white;
+}

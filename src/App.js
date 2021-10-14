@@ -2,6 +2,7 @@ import './App.css';
 import ListaPessoas from './components/ListaPessoas';
 import Header from './layout/Header';
 import Footer from './layout/Footer';
+import { useState } from 'react';
 
 const gentes = [
   {
@@ -36,9 +37,12 @@ const headerDetails = {
 };
 
 function App() {
+  const [nightmode, setNightmode] = useState(false);
+
   return (
-    <div className="App">
+    <div className={nightmode ? "App-nightmode" : "App"}>
       <Header info={headerDetails} />
+      <button onClick={() => setNightmode(!nightmode)}>{nightmode ? "Desativar" : "Ativar"} modo noturno</button>
       <ListaPessoas pessoas={gentes} />
       <Footer />
     </div>

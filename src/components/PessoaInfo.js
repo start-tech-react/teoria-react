@@ -13,6 +13,15 @@ class PessoaInfo extends React.Component {
     this.remove = this.remove.bind(this);
   }
 
+  componentWillUpdate() {
+    console.log('PessoaInfo atualizou...');
+  }
+
+  componentDidMount() {
+
+    console.log('PessoaInfo apareceu...');
+  }
+
   changeNome(novoValor) {
     this.setState(() => {
       return { nome: novoValor }

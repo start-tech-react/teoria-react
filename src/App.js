@@ -3,6 +3,9 @@ import ListaPessoas from './components/ListaPessoas';
 import Header from './layout/Header';
 import Footer from './layout/Footer';
 import { useState } from 'react';
+import Relogio from './components/Relogio';
+import RelogioFuncional from './components/RelogioFuncional';
+import BuscaCep from './components/BuscaCep';
 
 const gentes = [
   {
@@ -39,10 +42,19 @@ const headerDetails = {
 function App() {
   const [nightmode, setNightmode] = useState(false);
 
+  function changeNightmode(value) {
+    console.log('chamou o callback');
+    console.log(value);
+    setNightmode(value);
+  }
+
   return (
     <div className={nightmode ? "App-nightmode" : "App"}>
-      <Header info={headerDetails} />
-      <button onClick={() => setNightmode(!nightmode)}>{nightmode ? "Desativar" : "Ativar"} modo noturno</button>
+      <Header info={headerDetails} nightmode={nightmode} onChangeNightmode={changeNightmode} />
+      <BuscaCep />
+      {
+        nightmode && <RelogioFuncional />
+      }
       <ListaPessoas pessoas={gentes} />
       <Footer />
     </div>
